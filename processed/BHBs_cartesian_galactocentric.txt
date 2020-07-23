@@ -1,0 +1,1 @@
+x [kpc]; y [kpc]; z [kpc]; vx [km/s]; vy [km/s]; vz [km/s];      phi1 [deg]; phi2 [deg]; radius [kpc]; vgsr [km/s]; dmuphi1 [marcsec/yr]; dmuphi2 [marcsec/yr];       eradius[kpc]; evgsr [km/s]; edmuphi1 [marcsec/yr]; edmuphi2 [marcsec/yr];      sgrweak [bool]; sgrstrong [bool]; FeH [dex];
