@@ -1446,3 +1446,211 @@ def compare_file_and_model(compfile,modelangles=[0,0,0],outputfile='',dlim=[0,30
 
 
 
+def make_debias_model(l,b,phi,theta,vtravel,psi=0.,verbose=False):
+
+    nposteriors = phi.size
+
+    # translate l and b to rotators
+    
+
+    inphi   = l*(np.pi/180.) # make radians!
+    intheta = (90.-b)*(np.pi/180.) # make radians!
+    
+    vx = 0.
+    vy = 0.
+    vz = -1.
+    
+    Model = psp_io.particle_holder()
+
+    Model.xpos = np.cos(intheta)*np.cos(inphi)
+    Model.ypos = np.cos(intheta)*np.sin(inphi)
+    Model.zpos = np.sin(intheta)
+    
+    Model.xvel = vx
+    Model.yvel = vy
+    Model.zvel = vz
+
+    l = np.zeros(nposteriors)
+    b = np.zeros(nposteriors)
+    dist = np.zeros(nposteriors)
+    mul = np.zeros(nposteriors)
+    mub = np.zeros(nposteriors)
+    vlos = np.zeros(nposteriors)
+
+    # but is not necessary here...
+    for i in range(0,nposteriors):
+        Model.zvel = -vtravel[i]
+        Undo = wolfram_xyz_single(Model,phi[i],theta[i],0.,reverse=False)
+
+        l[i],b[i],dist[i],vlos[i],mul[i],mub[i] = jorge_galactic(Undo.xpos,Undo.ypos,Undo.zpos,Undo.xvel,Undo.yvel,Undo.zvel)
+ 
+    return l,b,dist,vlos,mul,mub
+
+
+
+def wolfram_xyz_single(PSPDump,phid,thetad,psid,velocity=True,reverse=False,matrix=False,dot2=True):
+    '''
+    rotate_points
+        take a PSP dump and return the positions/velocities rotated by a specified set of angles
+
+    inputs
+    ------------------
+    PSPDump     : input set of points
+    xrotation   : rotation into/out of page, in degrees
+    yrotation   :
+    zrotation   : 
+    velocity    : boolean
+        if True, return velocity transformation as well
+    euler       : boolean
+        if True, transform as ZXZ' convention
+
+
+    returns
+    ------------------
+    PSPOut      : the rotated phase-space output
+
+
+    '''
+    #
+    radfac = np.pi/180.
+    #
+    # set rotation in radians
+    phi   = phid*radfac
+    theta = thetad*radfac
+    psi   = psid*radfac
+    #
+    Rmatrix = euler_xyz(phi,theta,psi)
+    #
+    if not reverse:
+        Rmatrix = Rmatrix.T
+    # note: no guard against bad PSP here.
+    pts = np.array([PSPDump.xpos,PSPDump.ypos,PSPDump.zpos])
+    #
+    # instantiate new blank PSP item
+    PSPOut = psp_io.particle_holder()    
+    #
+    # do the transformation in position
+    tmp = np.dot(pts.T,Rmatrix)
+    PSPOut.xpos = tmp[0]
+    PSPOut.ypos = tmp[1]
+    PSPOut.zpos = tmp[2]
+    #
+    #
+    # and velocity
+    if velocity:
+        vpts = np.array([PSPDump.xvel,PSPDump.yvel,PSPDump.zvel])
+        tmp = np.dot(vpts.T,Rmatrix)
+        PSPOut.xvel = tmp[0]
+        PSPOut.yvel = tmp[1]
+        PSPOut.zvel = tmp[2]
+        if dot2:
+            tmp = np.dot(Rmatrix,vpts)
+            PSPOut.xvel = tmp[0]
+            PSPOut.yvel = tmp[1]
+            PSPOut.zvel = tmp[2]
+    #
+    if matrix:
+        return PSPOut,Rmatrix
+    else:
+        return PSPOut
+
+
+
+
+
+
+
+def jorge_galactic(x0,y0,z0,u0,v0,w0):
+    
+    rad = np.sqrt(x0**2+y0**2+z0**2)
+    xphi= np.arctan2(y0,x0)
+    xth = np.arccos(z0/rad)
+    
+    xur = np.zeros([3,x0.size])
+    xur[0]= np.sin(xth)*np.cos(xphi)
+    xur[1]= np.sin(xth)*np.sin(xphi)
+    xur[2]= np.cos(xth)
+         
+    xuth = np.zeros([3,x0.size])
+    xuth[0]= np.cos(xth)*np.cos(xphi)
+    xuth[1]= np.cos(xth)*np.sin(xphi)
+    xuth[2]=-np.sin(xth)
+
+    xuphi = np.zeros([3,x0.size])
+    xuphi[0]=-np.sin(xphi)
+    xuphi[1]=+np.cos(xphi)
+    xuphi[2]= 0.
+    
+    vr =    u0*  xur[0] + v0*  xur[1] + w0*  xur[2]
+    vth=    u0* xuth[0] + v0* xuth[1] + w0* xuth[2]
+    vphi=   u0*xuphi[0] + v0*xuphi[1] + w0*xuphi[2]
+          
+    vb= -vth
+    
+    # following the astropy convention
+    vl= vphi
+         
+    dk  =4.74057           #conversion from km/s
+    par =1./rad             #arc sec --> rad in [kpc]
+    dmul=vl / dk * par
+    dmub=vb / dk * par
+
+    f=np.pi/180.
+    dB=np.arcsin(z0/rad)/f
+    #dL=np.arctan(y0/x0)/f
+    
+    #dL[(y0<0)&(x0>0.)] += 360.
+    #dL[(y0>0)&(x0<0.)] += 180.
+    #dL[(y0<0)&(x0<0.)] += 180.
+    
+    dL = np.arctan2(y0,x0)/f
+    
+    #print(dL)
+    
+    if dL.size>1:
+        dL[np.array(dL)<0.] += 360.
+    else:
+        if dL<0.: dL+=360.
+    #if ((y0<0)&(x0>0.)): dL=dL+360.
+    #if ((y0>0)&(x0<0.)): dL=dL+180.
+    #if ((y0<0)&(x0<0.)): dL=dL+180.
+    
+    return dL,dB,rad,vr,dmul,dmub
+
+
+
+
+
+def make_rotation_model(vphi,solpos=[0.01,0.,0.0],pointres=180,verbose=False):
+
+    phirange = np.linspace(0,2.*np.pi,pointres)
+    thrange = np.linspace(-np.pi/2.,np.pi/2.,pointres)
+
+    pp,tt = np.meshgrid(phirange,thrange)
+
+    ppflat = pp.reshape(-1,)
+    ttflat = tt.reshape(-1,)
+
+    vx0 = -np.sin(ppflat)*vphi
+    vy0 =  np.cos(ppflat)*vphi
+    
+    vz0 =  np.zeros(ppflat.size)
+
+    x0 = np.cos(ttflat)*np.cos(ppflat) + solpos[0]
+    y0 = np.cos(ttflat)*np.sin(ppflat) + solpos[1]
+    z0 = np.sin(ttflat) + solpos[2]
+
+    vr = (x0*vx0 + y0*vy0)/np.sqrt(x0*x0 + y0*y0)
+    # now revise vx0,vy0
+    vx0 = np.cos(ppflat)*vr - np.sin(ppflat)*vphi
+    vy0 = np.sin(ppflat)*vr + np.cos(ppflat)*vphi
+    
+    dL,dB,rad,vr,dmul,dmub = jorge_galactic(x0,y0,z0,vx0,vy0,vz0)
+     
+    return dL,dB,rad,dmul,dmub,vr
+
+
+
+
+
+
