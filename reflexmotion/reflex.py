@@ -1153,7 +1153,7 @@ def make_map(l,b,vel,weight,twopi=True):
 
 # populate the model...
 
-def make_model(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u',flip=False,verbose=False):
+def make_model(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u',flip=False,verbose=False,vtravel=1.,fullreturn=False,solreflex=[0.,0.,0.,0.,0.,0.]):
 
     pointres = 180
 
@@ -1166,20 +1166,20 @@ def make_model(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u'
     ppflat = pp.reshape(-1,)
     ttflat = tt.reshape(-1,)
 
-    vx = np.zeros(pp.size)
-    vy = np.zeros(pp.size)
+    vx = np.zeros(pp.size)+solreflex[3]
+    vy = np.zeros(pp.size)+solreflex[4]
     if travel=='u':
-        vz = -np.ones(pp.size)
+        vz = -vtravel*np.ones(pp.size)+solreflex[5]
     else:
-        vz = np.ones(pp.size)
+        vz = vtravel*np.ones(pp.size)+solreflex[5]
 
 
     Model = psp_io.particle_holder()
 
 
-    Model.xpos = np.cos(ttflat)*np.cos(ppflat)
-    Model.ypos = np.cos(ttflat)*np.sin(ppflat)
-    Model.zpos = np.sin(ttflat)
+    Model.xpos = np.cos(ttflat)*np.cos(ppflat) + solreflex[0]
+    Model.ypos = np.cos(ttflat)*np.sin(ppflat) + solreflex[1]
+    Model.zpos = np.sin(ttflat)                + solreflex[2]
     
 
     Model.xvel = vx
@@ -1212,7 +1212,12 @@ def make_model(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u'
         mub*=-1
         mul*=-1
     
-    return l,b,dist,mul,mub,vlos
+    if fullreturn:
+        return l,b,dist,mul,mub,vlos,Undo
+
+
+    else:
+        return l,b,dist,mul,mub,vlos
 
 
 
