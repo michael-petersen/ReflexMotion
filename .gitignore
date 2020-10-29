@@ -1,3 +1,8 @@
 .DS_Store           
 .ipynb_checkpoints/ 
 *.pyc
+LAMOST-K-Giants.ipynb
+Upgraded-Mocks.ipynb
+Cohen17_RRL.ipynb
+Erkal-2020-Model.ipynb
+

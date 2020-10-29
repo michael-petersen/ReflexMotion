@@ -1,13 +1,14 @@
 import numpy as np
 
 
-def galactic(x0,y0,z0,u0,v0,w0,twopi=True):
+def galactic(x0,y0,z0,u0,v0,w0,twopi=False):
     """
     transform Cartesian coordinates to a spherical coordinate system that agrees with 
       galactic coordinates
 
 
-    twopi : (bool, True) if True, returns azimuth in [0,2pi). If False, returns azimuth in [-pi,pi).
+    twopi : (bool, True) If True, returns azimuth in [0,2pi). (aka spherical) 
+                         If False, returns azimuth in [-pi,pi). (aka observable)
 
     returns
     ------------
