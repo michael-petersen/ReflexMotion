@@ -1,6 +1,6 @@
 
 import numpy as np
-import kde as kde_3d
+from . import kde as kde_3d
 
 
 
@@ -101,6 +101,54 @@ def plot_aitoff_banana(ax,catx,caty,color,border=False,bounds=[-1,-1,-1,-1],grid
         else:
             ax.contourf(xx,yy,dens,[lobin,hibin],colors=color,alpha=alphaspace*(1+ib)+0.4,zorder=zorder)
             
+
+
+
+def report_posteriors(posteriors):
+    
+    usecats = ['vtravel','phi','theta','vra','vphi','vth','sigmar','sigmap','sigmat']
+
+    decoded = ['$v_{\\rm travel}$ [km/s]','$\ell$ [deg]','$b$ [deg]',\
+           '$\\langle v_r\\rangle$ [km/s]','$\\langle v_{\\phi}\\rangle $ [km/s]','$\\langle v_{\\theta}\\rangle$ [km/s]',\
+          '$\\sigma_{h,{\\rm los}}$ [km/s]','$\\sigma_{h,\ell}$ [km/s]','$\\sigma_{h,b}$ [km/s]']
+
+
+    
+    for ikey,key in enumerate(usecats):
+        print('{0} & '.format(decoded[ikey]),end='')
+        for posterior in posteriors:
+        
+            lodiff = np.percentile(posterior[key],50.)-np.percentile(posterior[key],50.-33.3)
+            midriff = np.percentile(posterior[key],50.)
+            hidiff = np.percentile(posterior[key],50.+33.3)-np.percentile(posterior[key],50.)
+            print('${0:2.0f}^{{+{1:2.0f}}}_{{-{2:2.0f}}}$ '.format(midriff,hidiff,lodiff),end='')
+            #if posterior != SAT:
+            #    print('&',end='')
+        print('\\\\')
+
+
+
+def plot_banana(ax,catalog,catx,caty,color,border=False,bounds=[-1,-1,-1,-1],gridsize=100,binset=[92.,98.,99.5],alphashade=0.2,alphazero=0.4):
+
+
+    xx,yy,dens,dadb = make_banana(catalog[catx],catalog[caty],bounds=bounds,gridsize=gridsize)
+    densflat = dens.reshape(-1,)
+    bins = np.percentile(densflat,binset)
+    for ib,b in enumerate(bins):
+        lobin = bins[ib]
+        if ib==(len(bins)-1):
+            hibin = np.inf
+        else:
+            hibin = bins[ib+1]
+        if border:
+            #print(1+ib)
+            ax.contourf(xx,yy,dens,[lobin,hibin],colors=color,alpha=alphashade*(1+ib)+alphazero)
+        else:
+            ax.contourf(xx,yy,dens,[lobin,hibin],colors=color,alpha=alphashade*(1+ib)+alphazero)
+            
+    if border:
+        ax.contour(xx,yy,dens,bins,colors=color,linewidths=0.2)
+
 
 
 

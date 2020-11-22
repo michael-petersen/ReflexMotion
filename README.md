@@ -10,4 +10,5 @@ This repository contains the code explicitly used in
 Multinest chains are available, but the multinest code and inputs are
 found elsewhere: contact if interested.
 
+Most notebooks are frozen as-is; please contact me if you have anything specific you are looking for.
 

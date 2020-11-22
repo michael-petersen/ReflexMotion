@@ -154,6 +154,12 @@ if legacy:
     
 
 
+    
+def return_galactic_SGR():
+    """return the matrix for transforming from galactic to Sgr"""
+    return np.array([[ 0.96403481,  0.1200588,  -0.23711343],
+                     [-0.25805248,  0.20931298, -0.9431845 ],
+                     [ 0.06360668, -0.97045039, -0.23276646]])
 
 def return_gaia_Agprime():
     """return the matrix in eq 3.61, key to transform from ICRS to galactic coordinates"""
@@ -278,6 +284,21 @@ def rotate_to_galactic(a,d,dist):
     else:
         ricrs = return_ricrs(a,d)
         rgal = np.dot(return_gaia_Agprime(),ricrs)
+        cpos = np.dot(dist,rgal)        
+    return cpos
+
+def rotate_to_sgr(a,d,dist):
+    """eq 3.68, but built for speed"""
+    # solve for positions
+    if a.size>1:
+        ricrs = return_ricrs(a,d)
+        rgalmid = np.dot(return_gaia_Agprime(),ricrs)
+        rgal = np.dot(return_galactic_SGR(),rgalmid)
+        cpos = dist*rgal        
+    else:
+        ricrs = return_ricrs(a,d)
+        rgalmid = np.dot(return_gaia_Agprime(),ricrs)
+        rgal = np.dot(return_galactic_SGR(),rgalmid)
         cpos = np.dot(dist,rgal)        
     return cpos
 
