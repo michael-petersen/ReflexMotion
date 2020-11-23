@@ -10,5 +10,7 @@ This repository contains the code explicitly used in
 Multinest chains are available, but the multinest code and inputs are
 found elsewhere: contact if interested.
 
+Data tables are located in processed/*heliocentric_sgr.txt for satellites, BHBs, and K Giants. 
+
 Most notebooks are frozen as-is; please contact me if you have anything specific you are looking for.
 

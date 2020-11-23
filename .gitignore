@@ -15,3 +15,7 @@ processed/*sphere*
 processed/*nearby*
 processed/model*
 figures/*
+Sgr-Cleaning.ipynb
+KGiants-Data.ipynb
+Satellites.ipynb
+BHB-Data.ipynb

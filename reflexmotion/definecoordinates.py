@@ -124,7 +124,7 @@ if legacy:
         b = np.arctan2(rgal[2],np.sqrt(rgal[0]*rgal[0]+rgal[1]*rgal[1]))
         return ell,b
 
-    def rotate_positions_cartesian(a,d,r):
+def rotate_positions_cartesian(a,d,r):
         """following galactic conventions"""
         ricrs = return_ricrs(a,d)
         rgal = np.dot(return_gaia_Agprime(),ricrs)
@@ -135,7 +135,7 @@ if legacy:
         return x,y,z
 
 
-    def rotate_velocities_cartesian(a,d,r,mua,mud,vlos):
+def rotate_velocities_cartesian(a,d,r,mua,mud,vlos):
         """following galactic conventions. This is a right-handed system, I think."""
         ell,b   = rotate_positions(a,d)
         mul,mub = rotate_velocities(a,d,mua,mud)
