@@ -1155,7 +1155,7 @@ def make_map(l,b,vel,weight,twopi=True):
 
 def make_model(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u',flip=False,verbose=False,vtravel=1.,fullreturn=False,solreflex=[0.,0.,0.,0.,0.,0.]):
 
-    pointres = 180
+    #pointres = 180
 
     phirange = np.linspace(0,2.*np.pi,pointres)
     thrange = np.linspace(-np.pi/2.,np.pi/2.,pointres)
@@ -1219,6 +1219,50 @@ def make_model(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u'
     else:
         return l,b,dist,mul,mub,vlos
 
+
+def make_model_cartesian(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u',flip=False,verbose=False,vtravel=1.,fullreturn=False,solreflex=[0.,0.,0.,0.,0.,0.]):
+
+    #pointres = 180
+
+    phirange = np.linspace(0,2.*np.pi,pointres)
+    thrange = np.linspace(-np.pi/2.,np.pi/2.,pointres)
+
+
+    pp,tt = np.meshgrid(phirange,thrange)
+
+    ppflat = pp.reshape(-1,)
+    ttflat = tt.reshape(-1,)
+
+    vx = np.zeros(pp.size)+solreflex[3]
+    vy = np.zeros(pp.size)+solreflex[4]
+    if travel=='u':
+        vz = -vtravel*np.ones(pp.size)+solreflex[5]
+    else:
+        vz = vtravel*np.ones(pp.size)+solreflex[5]
+
+
+    Model = psp_io.particle_holder()
+
+
+    Model.xpos = np.cos(ttflat)*np.cos(ppflat) + solreflex[0]
+    Model.ypos = np.cos(ttflat)*np.sin(ppflat) + solreflex[1]
+    Model.zpos = np.sin(ttflat)                + solreflex[2]
+    
+
+    Model.xvel = vx
+    Model.yvel = vy
+    Model.zvel = vz
+
+
+    # the 180 shift brings the definition to spherical
+    #Undo = rm.wolfram_xyz(Model,phi+180.,theta,psi,reverse=False)
+    
+    # but is not necessary here...
+    Undo = wolfram_xyz(Model,phi,theta,psi,reverse=reverse)
+
+    l,b,dist,mul,mub,vlos,sdssflag = generate_observables(Undo,verbose=verbose,velscale=1.,distscale=1.,twopi=twopi)
+    
+    return l,b,Undo.xvel,Undo.yvel,Undo.zvel
 
 
 
