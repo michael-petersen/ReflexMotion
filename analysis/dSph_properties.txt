@@ -1,0 +1,56 @@
+Name (Abbreviation)	R.A.	decl.	rh	epsilon	theta	d	M_V	v_los	sigma_los	Referances	
+Antlia II(Ant II)	143.8868	-36.7673	76.20 +or- 7.20	0.38 +or- 0.08	156.0 +or- 6.0	132.0 +or- 6.0	-9.03 +or- 0.15	290.7 +or- 0.5	5.71 +or- 1.08	a	
+Aquarius II(Aqu II)	338.4813	-9.3274	5.10 +or- 0.80	0.39 +or- 0.09	121.0 +or- 9.0	107.9 +or- 3.3	-4.36 +or- 0.14	-71.1 +or- 2.5	5.4 +or- 2.15	b	
+Bootes I(Boo I)	210.0200	14.5135	9.97 +or- 0.27	0.3 +or- 0.03	6.0 +or- 3.0	66.0 +or- 3.0	-6.02 +or- 0.25	101.8 +or- 0.7	4.6 +or- 0.7	c,d,e	
+Bootes II(Boo II)	209.5141	12.8553	3.17 +or- 0.42	0.25 +or- 0.11	-68.0 +or- 27.0	42.0 +or- 2.0	-2.94 +or- 0.74	-117.0 +or- 5.2	10.5 +or- 7.4	f,e,g	
+Bootes III(Boo III)	209.3000	26.8000	33.03 +or- 2.50	0.33 +or- 0.085	-81.0 +or- 8.0	46.5 +or- 2.0	-5.75 +or- 0.5	197.5 +or- 3.8	14.0 +or- 3.2	h,i,j	
+Bootes IV(Boo IV)	233.6890	43.7260	7.60 +or- 0.80	0.64 +or- 0.05	3.0 +or- 4.0	209.0 +or- 19.0	-4.53 +or- 0.22			k	
+Canes Venatici I(CVn I)	202.0091	33.5521	7.12 +or- 0.21	0.44 +or- 0.03	80.0 +or- 2.0	210.0 +or- 6.0	-8.8 +or- 0.06	30.9 +or- 0.6	7.6 +or- 0.4	l,e,m	
+Canes Venatici II(CVn II)	194.2927	34.3226	1.52 +or- 0.24	0.4 +or- 0.13	9.0 +or- 15.0	160.0 +or- 4.5	-5.17 +or- 0.32	-128.9 +or- 1.2	4.6 +or- 0.8	n,e,m	
+Carina(Car)	100.4065	-50.9593	10.10 +or- 0.10	0.36 +or- 0.01	60.0 +or- 1.0	105.6 +or- 5.4	-9.43 +or- 0.05	222.9 +or- 0.1	6.6 +or- 1.2	o,e,p	
+Carina II(Car II)	114.1066	-57.9991	8.69 +or- 0.75	0.34 +or- 0.07	170.0 +or- 9.0	37.4 +or- 0.4	-4.57 +or- 0.1	477.2 +or- 1.2	3.4 +or- 1.0	q,r	
+Carina III(Car III)	114.6298	-57.8997	3.75 +or- 1.00	0.55 +or- 0.18	150.0 +or- 14.0	27.8 +or- 0.6	-2.4 +or- 0.2	284.6 +or- 3.25	5.6 +or- 3.2	q,r	
+Centaurus I(Cen I)	189.5850	-40.9020	2.90 +or- 0.45	0.4 +or- 0.1	20.0 +or- 11.0	116.3 +or- 1.1	-5.55 +or- 0.11			s	
+Cetus II(Cet II)	19.4700	-17.4200	1.90 +or- 0.75	0.0 +or- 0.0	0.0 +or- 0.0	30.0 +or- 3.0	0.0 +or- 0.68			t	
+Cetus III(Cet III)	31.3310	-4.2700	1.23 +or- 0.30	0.76 +or- 0.07	101.0 +or- 5.5	251.0 +or- 17.5	-2.45 +or- 0.565			u	
+Columba I(Col I)	82.8570	-28.0425	2.20 +or- 0.20	0.3 +or- 0.1	24.0 +or- 9.0	183.0 +or- 10.0	-4.2 +or- 0.2	153.7 +or- 4.9		v,w	
+Coma Berenices(CB)	186.7454	23.9069	5.64 +or- 0.30	0.37 +or- 0.05	-57.0 +or- 4.0	42.0 +or- 1.5	-4.38 +or- 0.25	98.1 +or- 0.9	4.6 +or- 0.8	e,x,m	
+Crater II(Cra II)	177.3100	-18.4130	31.20 +or- 2.50	0.0 +or- 0.0	0.0 +or- 0.0	117.5 +or- 1.1	-8.2 +or- 0.1	87.5 +or- 0.4	2.7 +or- 0.3	y,z	
+Draco(Dra)	260.0684	57.9185	9.67 +or- 0.09	0.29 +or- 0.01	87.0 +or- 1.0	75.8 +or- 5.4	-8.71 +or- 0.05	-290.7 +or- 0.75	9.1 +or- 1.2	aa,e,ab	
+Draco II(Dra II)	238.1983	64.5653	3.00 +or- 0.60	0.23 +or- 0.15	76.0 +or- 27.0	21.5 +or- 0.4	-0.8 +or- 0.7	-342.5 +or- 1.15		ac	
+Eridanus II(Eri II)	56.0925	-43.5329	2.31 +or- 0.12	0.48 +or- 0.04	72.6 +or- 3.3	366.0 +or- 17.0	-7.1 +or- 0.3	75.6 +or- 1.3	6.9 +or- 1.05	ad,ae	
+Fornax(For)	39.9583	-34.4997	19.90 +or- 0.06	0.29 +or- 0.02	42.7 +or- 0.3	147.2 +or- 8.4	-13.46 +or- 0.14	55.2 +or- 0.1	12.1 +or- 0.2	e,af,p,ag	
+Grus I(Gru I)	344.1660	-50.1680	4.16 +or- 0.64	0.44 +or- 0.09	153.0 +or- 7.5	127.0 +or- 6.0	-4.3 +or- 0.3	-140.5 +or- 2.0		ah,ai,aj	
+Grus II(Gru II)	331.0250	-46.4420	5.90 +or- 0.50	0.0 +or- 0.0	0.0 +or- 0.0	55.0 +or- 2.0	-3.5 +or- 0.3	-110.0 +or- 0.5		ai,ak	
+Hercules(Her)	247.7722	12.7852	5.63 +or- 0.46	0.69 +or- 0.03	-73.0 +or- 2.0	130.6 +or- 6.1	-5.83 +or- 0.17	45.0 +or- 1.1	5.1 +or- 0.9	e,al,m	
+Horologium I(Hor I)	43.8813	-54.1160	1.46 +or- 0.07	0.16 +or- 0.06	69.0 +or- 11.0	79.0 +or- 4.0	-3.4 +or- 0.1	112.8 +or- 2.55	4.9 +or- 1.85	am,an,j	
+Horologium II(Hor II)	49.1077	-50.0486	2.09 +or- 0.42	0.52 +or- 15.0	127.0 +or- 11.0	78.0 +or- 8.0	-2.6 +or- 0.25			ao	
+Hydra II(Hyd II)	185.4251	-31.9860	1.70 +or- 0.25	0.01 +or- 0.1	28.0 +or- 37.5	151.0 +or- 8.0	-5.1 +or- 0.3	303.1 +or- 1.4		ap,aq,ar	
+Hydrus I(Hyi I)	37.3890	-79.3089	7.42 +or- 0.58	0.21 +or- 0.11	97.0 +or- 14.0	27.6 +or- 0.5	-4.71 +or- 0.08	80.4 +or- 0.6	2.7 +or- 0.45	as	
+Leo I(Leo I)	152.1146	12.3059	3.65 +or- 0.03	0.3 +or- 0.1	78.0 +or- 1.0	258.2 +or- 9.5	-11.78 +or- 0.28	282.9 +or- 0.5	9.2 +or- 0.4	at,e,au	
+Leo II(Leo II)	168.3627	22.1529	2.52 +or- 0.03	0.07 +or- 0.01	38.0 +or- 8.0	233.0 +or- 15.0	-9.74 +or- 0.04	78.5 +or- 0.6	7.4 +or- 0.4	av,e,aw	
+Leo IV(Leo IV)	173.2405	-0.5453	2.54 +or- 0.27	0.17 +or- 0.09	-28.0 +or- 38.0	151.4 +or- 4.4	-4.99 +or- 0.26	132.3 +or- 1.4	3.3 +or- 1.7	ax,e,m	
+Leo V(Leo V)	172.7857	2.2194	1.00 +or- 0.32	0.43 +or- 0.22	-71.0 +or- 26.0	169.0 +or- 4.4	-4.4 +or- 0.36	173.0 +or- 0.9	3.2 +or- 1.55	ay,ax,e	
+Pegasus III(Peg III)	336.1074	5.4150	1.67 +or- 0.23	0.37 +or- 0.085	83.0 +or- 7.5	215.0 +or- 12.0	-4.17 +or- 0.205	-222.9 +or- 2.6	5.4 +or- 2.75	az,ba	
+Phoenix II(Phx II)	354.9960	-54.4115	1.50 +or- 0.30	0.4 +or- 0.1	156.0 +or- 13.0	84.1 +or- 8.0	-2.7 +or- 0.4	32.4 +or- 3.75		w,bb	
+Pictor I(Pic I)	70.9475	-50.2831	0.90 +or- 0.09	0.46 +or- 0.08	58.0 +or- 6.0	125.9 +or- 5.0	-3.1 +or- 0.3			am,j	
+Pictor II(Pic II)	101.1800	-59.8970	3.80 +or- 1.25	0.13 +or- 17.5	14.0 +or- 63.0	45.0 +or- 4.5	-3.2 +or- 0.45			bc	
+Pisces II(Psc II)	344.6345	5.9526	1.12 +or- 0.16	0.34 +or- 0.1	78.0 +or- 20.0	183.0 +or- 15.0	-4.22 +or- 0.38	-226.5 +or- 2.7	5.4 +or- 3.1	ap,e,bd	
+Reticulum II(Ret II)	53.9203	-54.0513	6.30 +or- 0.40	0.6 +or- 0.1	68.0 +or- 2.0	31.4 +or- 1.4	-3.1 +or- 0.1	64.3 +or- 1.2	3.6 +or- 0.85	bb,be	
+Reticulum III(Ret III)	56.3600	-60.4500	2.40 +or- 0.85	0.0 +or- 0.0	0.0 +or- 0.0	92.0 +or- 13.0	-3.3 +or- 0.29	274.2 +or- 7.45		t,w	
+Sagittarius II(Sgr II)	298.1687	-22.0681	1.60 +or- 0.10	0.0 +or- 0.0	0.0 +or- 0.0	70.2 +or- 5.0	-5.2 +or- 0.1	-177.2 +or- 0.55	1.7 +or- 0.5	bf,bb	
+Sculptor(Scl)	15.0183	-33.7186	11.17 +or- 0.05	0.33 +or- 0.01	92.0 +or- 1.0	83.9 +or- 1.5	-10.82 +or- 0.14	111.4 +or- 0.1	9.2 +or- 1.1	bg,e,p	
+Segue 1(Seg 1)	151.7504	16.0756	3.62 +or- 0.42	0.33 +or- 0.1	77.0 +or- 15.0	23.0 +or- 2.0	-1.3 +or- 0.73	208.5 +or- 0.9	3.7 +or- 1.25	bh,e,bi	
+Segue 2(Seg 2)	34.8226	20.1624	3.76 +or- 0.28	0.22 +or- 0.07	164.0 +or- 14.0	36.6 +or- 2.45	-1.86 +or- 0.88	-40.2 +or- 0.9		bj,bk,e	
+Sextans(Sxt)	153.2628	-1.6133	16.50 +or- 0.10	0.3 +or- 0.01	57.0 +or- 1.0	92.5 +or- 2.5	-8.72 +or- 0.06	224.3 +or- 0.1	7.9 +or- 1.3	e,bl,p	
+Triangulum II(Tri II)	33.3252	36.1702	2.50 +or- 0.30	0.3 +or- 0.1	73.0 +or- 17.0	28.4 +or- 1.6	-1.6 +or- 0.4	-381.7 +or- 1.1		v,bm	
+Tucana II(Tuc II)	342.9796	-58.5689	12.89 +or- 1.85	0.39 +or- 0.15	107.0 +or- 18.0	58.0 +or- 3.0	-3.8 +or- 0.1	-129.1 +or- 3.5	8.6 +or- 3.55	am,aj	
+Tucana III(Tuc III)	359.1075	-59.5833	5.10 +or- 1.20	0.2 +or- 0.1	25.0 +or- 38.0	22.9 +or- 0.9	-1.3 +or- 0.2	-102.3 +or- 0.4		bb,bn	
+Tucana IV(Tuc IV)	0.7170	-60.8300	9.30 +or- 1.15	0.39 +or- 0.085	27.0 +or- 8.5	47.0 +or- 4.0	-3.0 +or- 0.35	15.9 +or- 1.75	4.3 +or- 1.35	ak	
+Tucana V(Tuc V)	354.3470	-63.2660	2.10 +or- 0.50	0.51 +or- 0.135	29.0 +or- 11.0	55.0 +or- 5.5	-1.1 +or- 0.55	-36.2 +or- 2.35		ak	
+Ursa Major I(UMa I)	158.7706	51.9479	8.31 +or- 0.35	0.59 +or- 0.03	67.0 +or- 2.0	97.3 +or- 5.85	-5.13 +or- 0.38	-55.3 +or- 1.4	7.0 +or- 1.0	bo,e,m	
+Ursa Major II(UMa II)	132.8726	63.1335	13.80 +or- 0.50	0.56 +or- 0.03	-76.0 +or- 2.0	34.7 +or- 2.1	-4.25 +or- 0.26	-116.5 +or- 1.9	6.7 +or- 1.4	bp,e,m	
+Ursa Minor(UMi)	227.2420	67.2221	18.30 +or- 0.11	0.55 +or- 0.01	50.0 +or- 1.0	76.2 +or- 4.2	-9.03 +or- 0.05	-247.0 +or- 0.4	8.6 +or- 0.3	bq,e,br	
+Virgo I(Vir I)	180.0380	-0.6810	1.76 +or- 0.45	0.59 +or- 0.13	62.0 +or- 10.5	91.0 +or- 6.5	-0.33 +or- 0.81			u	
+Willman 1(Wil 1)	162.3436	51.0501	2.51 +or- 0.22	0.47 +or- 0.06	73.0 +or- 4.0	38.0 +or- 7.0	-2.53 +or- 0.74	-12.8 +or- 1.0	4.5 +or- 0.9	e,bs,bt	
+Note. Citations: (a) Torrealba et al. (2019); (b) Torrealba et al. (2016b); (c) Dall'Ora et al. (2006); (d) Koposov et al. (2011); (e) Munoz et al. (2018); (f) Koch et al. (2009); (g) Walsh et al. (2008); (h) Carlin et al. (2009); (i) Carlin & Sand (2018); (j) Moskowitz & Walker (2020); (k) Homma et al. (2019); (l) Kuehn et al. (2008); (m) Simon & Geha (2007); (n) Greco et al. (2008); (o) Karczmarek et al. (2015); (p) Walker et al. (2009); (q) Li et al. (2018a); (r) Torrealba et al. (2018); (s) Mau et al. (2020); (t) Drlica-Wagner et al. (2015); (u) Homma et al. (2018); (v) Carlin et al. (2017); (w) Fritz et al. (2019); (x) Musella et al. (2009); (y) Caldwell et al. (2017); (z) Torrealba et al. (2016a); (aa) Bonanos et al. (2004); (ab) Walker et al. (2015b); (ac) Longeard et al. (2018); (ad) Crnojevic et al. (2016); (ae) Li et al. (2017); (af) Pietrzynski et al. (2009); (ag) Wang et al. (2019); (ah) Cantu et al. (2021); (ai) Martinez-Vazquez et al. (2019); (aj) Walker et al. (2016); (ak) Simon et al. (2020); (al) Mutlu-Pakdil et al. (2020); (am) Koposov et al. (2015a); (an) Koposov et al. (2015b); (ao) Kim & Jerjen (2015); (ap) Kirby et al. (2015); (aq) Martin et al. (2015); (ar) Vivas et al. (2016); (as) Koposov et al. (2018); (at) Mateo et al. (2008); (au) Stetson et al. (2014); (av) Bellazzini et al. (2005); (aw) Spencer et al. (2017); (ax) Medina et al. (2018); (ay) Jenkins et al. (2021); (az) Kim et al. (2016); (ba) Richstein et al. (2022); (bb) Mutlu-Pakdil et al. (2018); (bc) Drlica-Wagner et al. (2016); (bd) Sand et al. (2012); (be) Walker et al. (2015a); (bf) Longeard et al. (2021a); (bg) Martinez-Vazquez et al. (2015); (bh) Belokurov et al. (2007); (bi) Simon et al. (2011); (bj) Boettcher et al. (2013); (bk) Kirby et al. (2013); (bl) Okamoto et al. (2017); (bm) Kirby et al. (2017); (bn) Simon et al. (2017); (bo) Garofalo et al. (2013); (bp) Dall'Ora et al. (2012); (bq) Bellazzini et al. (2002); (br) Spencer et al. (2018); (bs) Willman et al. (2006); (bt) Willman et al. (2011).

@@ -16,7 +16,7 @@ mpl.rcParams['ytick.labelsize'] = 10
 
 
 # exptool imports
-from exptool.io import psp_io
+from exptool.io import particle
 from exptool.utils import kde_3d
 from exptool.observables import transform
 from exptool.analysis import pattern
@@ -84,7 +84,7 @@ def wolfram_euler(PSPDump,phid,thetad,psid,velocity=True):
     
     #
     # instantiate new blank PSP item
-    PSPOut = psp_io.particle_holder()
+    PSPOut = particle.holder()
     
     #
     # do the transformation in position
@@ -158,7 +158,7 @@ def wolfram_xyz(PSPDump,phid,thetad,psid,velocity=True,reverse=False,matrix=Fals
     pts = np.array([PSPDump.xpos,PSPDump.ypos,PSPDump.zpos])
     #
     # instantiate new blank PSP item
-    PSPOut = psp_io.particle_holder()    
+    PSPOut = particle.holder()    
     #
     # do the transformation in position
     tmp = np.dot(pts.T,Rmatrix)
@@ -252,7 +252,7 @@ def rotate_points(PSPDump,xrotation,yrotation,zrotation,velocity=True,euler=Fals
     
     #
     # instantiate new blank PSP item
-    PSPOut = psp_io.particle_holder()
+    PSPOut = particle.holder()
     
     #
     # do the transformation in position
@@ -772,7 +772,7 @@ def de_rotate_points(PSPDump,xrotation,yrotation,zrotation,euler=False):
     
     #
     # instantiate new blank PSP item
-    PSPOut = psp_io.particle_holder()
+    PSPOut = particle.holder()
     
     #
     # do the transformation in position
@@ -802,7 +802,7 @@ def find_anticentre(SatPoints,traj=True,angleres=5,angletol=1.,verbose=1):
     xb,yb,zb = find_transform(SatPoints,traj=True,angleres=5,angletol=1.)
     
     # make a placeholder of the direction
-    ZeroPoints = psp_io.particle_holder()
+    ZeroPoints = particle.holder()
     ZeroPoints.xpos = np.array([1.,-1.])
     ZeroPoints.ypos = np.array([0.,0.])
     ZeroPoints.zpos = np.array([0.,0.])
@@ -1174,7 +1174,7 @@ def make_model(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,travel='u'
         vz = vtravel*np.ones(pp.size)+solreflex[5]
 
 
-    Model = psp_io.particle_holder()
+    Model = particle.holder()
 
 
     Model.xpos = np.cos(ttflat)*np.cos(ppflat) + solreflex[0]
@@ -1241,7 +1241,7 @@ def make_model_cartesian(phi,theta,psi=0.,pointres=180,reverse=False,twopi=True,
         vz = vtravel*np.ones(pp.size)+solreflex[5]
 
 
-    Model = psp_io.particle_holder()
+    Model = particle.holder()
 
 
     Model.xpos = np.cos(ttflat)*np.cos(ppflat) + solreflex[0]
@@ -1284,7 +1284,7 @@ def make_model2(phi,theta,amp2=1.,psi=0.,pointres=180,reverse=False,twopi=True):
     vz = -np.ones(pp.size)
 
 
-    Model = psp_io.particle_holder()
+    Model = particle.holder()
 
 
     Model.xpos = np.cos(ttflat)*np.cos(ppflat)
@@ -1509,7 +1509,7 @@ def make_debias_model(l,b,phi,theta,vtravel,psi=0.,verbose=False):
     vy = 0.
     vz = -1.
     
-    Model = psp_io.particle_holder()
+    Model = particle.holder()
 
     Model.xpos = np.cos(intheta)*np.cos(inphi)
     Model.ypos = np.cos(intheta)*np.sin(inphi)
@@ -1576,7 +1576,7 @@ def wolfram_xyz_single(PSPDump,phid,thetad,psid,velocity=True,reverse=False,matr
     pts = np.array([PSPDump.xpos,PSPDump.ypos,PSPDump.zpos])
     #
     # instantiate new blank PSP item
-    PSPOut = psp_io.particle_holder()    
+    PSPOut = particle.holder()    
     #
     # do the transformation in position
     tmp = np.dot(pts.T,Rmatrix)

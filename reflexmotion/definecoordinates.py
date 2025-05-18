@@ -223,6 +223,21 @@ def return_mugal(l,b,mul,mub):
     return p*mul + q*mub
 
 
+def rotate_positions(a,d):
+    """eq 3.68, """
+    #mu = return_muicrs(a,d,mua,mud)
+    #mugal = np.dot(return_gaia_Agprime(),mu) # eq. 3.68
+    
+    # solve for positions
+    ricrs = return_ricrs(a,d)
+    rgal = np.dot(return_gaia_Agprime(),ricrs)
+
+    # implement eq 3.63
+    ell,b = np.arctan2(rgal[1],rgal[0]),np.arctan2(rgal[2],np.sqrt(rgal[0]*rgal[0]+rgal[1]*rgal[1]))
+    
+    return ell,b
+    
+
 def rotate_velocities(a,d,mua,mud):
     """eq 3.68, """
     mu = return_muicrs(a,d,mua,mud)
